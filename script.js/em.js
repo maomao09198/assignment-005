@@ -1,14 +1,14 @@
 // Data - at least 6 cards
 const cardsData = [
-  {id:'c1', icon:'🚨', name:'জাতীয় জরুরি নম্বর', en:'National Emergency', number:'999', category:'All'},
-  {id:'c2', icon:'👮‍♂️', name:'পুলিশ হেল্পলাইন', en:'Police Helpline', number:'999', category:'Police'},
-  {id:'c3', icon:'🚒', name:'ফায়ার সার্ভিস', en:'Fire Service', number:'999', category:'Fire'},
-  {id:'c4', icon:'🚑', name:'এম্বুলেন্স সার্ভিস', en:'Ambulance Service', number:'1994-999999', category:'Health'},
-  {id:'c5', icon:'👩‍👧', name:'মহিলা ও শিশু হেল্পলাইন', en:'Women & Child Helpline', number:'109', category:'Help'},
-  {id:'c6', icon:'⚡', name:'বিদ্যুৎ হেল্পলাইন', en:'Electricity Helpline', number:'16216', category:'Electricity'},
-  {id:'c7', icon:'📻', name:'বাংলাদেশ রেলওয়ে হেল্পলাইন', en:'Bangladesh Railway', number:'163', category:'Travel'},
-  {id:'c8', icon:'🛡️', name:'দুর্নীতি দমন হেল্পলাইন', en:'Anti-Corruption', number:'106', category:'Govt'},
-  {id:'c9', icon:'🏥', name:'হাসপাতাল সেবা', en:'Hospital Service', number:'16263', category:'Health'},
+  {id:'c1', icon:'<img src="./assets/emergency.png" alt="" style="width:30px;height:30px;">', name:'National Emergency Number', en:'National Emergency', number:'999', category:'All'},
+  {id:'c2', icon:'<img src="./assets/police.png" alt="" style="width:30px;height:30px;">', name:'Police Helpline Number', en:'Police', number:'999', category:'Police'},
+  {id:'c3', icon:'<img src="./assets/fire-service.png" alt="" style="width:30px;height:30px;">', name:'Fire Service Number', en:'Fire Service', number:'999', category:'Fire'},
+  {id:'c4', icon:'<img src="./assets/ambulance.png" alt="emergency" style="width:30px;height:30px;">', name:'Ambulance Service', en:'Ambulance', number:'1994-999999', category:'Health'},
+  {id:'c5', icon:'<img src="./assets/emergency.png" alt="" style="width:30px;height:30px;">', name:'Women & Child Helpline', en:'Women & Child Helpline', number:'109', category:'Help'},
+  {id:'c6', icon:'<img src="./assets/emergency.png" alt="" style="width:30px;height:30px;">', name:'Anti-Corruption Helpline', en:'Anti-Corruption', number:'106', category:'Govt'},
+  {id:'c7', icon:'<img src="./assets/emergency.png" alt="" style="width:30px;height:30px;">', name:'Electricity Helpline', en:'Electricity Outage', number:'16216', category:'Electricity'},
+  {id:'c8', icon:'<img src="./assets/emergency.png" alt="" style="width:30px;height:30px;">', name:'Brac Helpline', en:'Brac', number:'16445', category:'NGO'},
+  {id:'c9', icon:'<img src="./assets/emergency.png" alt="" style="width:30px;height:30px;">', name:'Bangladesh Railway Helpline ', en:'Bangladesh Railway', number:'163', category:'Travel'},
 ];
 
 // Counters & state
@@ -39,26 +39,27 @@ function renderCards(){
     el.className = 'card';
     el.dataset.id = card.id;
     el.innerHTML = `
-      <button class="heart" aria-label="favorite" title="Add heart" data-id="${card.id}">💗</button>
+      <button class="heart" aria-label="favorite" title="Add heart" data-id="${card.id}"><i class="fa-regular fa-heart"></i></button>
 
       <div class="meta">
         <div class="icon" aria-hidden="true">${card.icon}</div>
-        <div class="titles">
-          <div class="name">${card.name}</div>
-          <div class="en">${card.en}</div>
-        </div>
+        
       </div>
 
       <div>
+      <div class="titles">
+          <div class="name">${card.name}</div>
+          <div class="en">${card.en}</div>
+        </div>
         <div class="number">${card.number}</div>
         <div class="badge">${card.category}</div>
 
         <div class="actions">
           <button class="btn copy btn-copy" data-number="${card.number}" data-name="${card.en}" title="Copy number">
-            📋 Copy
+            <i class="fa-regular fa-copy"></i> Copy
           </button>
           <button class="btn call btn-call" data-id="${card.id}" data-name="${card.en}" data-number="${card.number}" title="Call">
-            📞 Call
+            <i class="fa-solid fa-phone"></i> Call
           </button>
         </div>
       </div>
