@@ -1,11 +1,59 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Emergency Service Directory</title>
+  <link rel="stylesheet" href="styles.css/em.css">
 </head>
 <body>
-    
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="brand">
+      <div class="logo">ES</div>
+      <div>
+        <div style="font-size:15px">Emergency Service</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:2px">
+          Directory — Govt. of Bangladesh (demo)
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-stats" aria-hidden="false">
+      <div class="stat"><span style="font-size:16px">💗</span> <span id="navHeartCount">0</span></div>
+      <div class="stat"><span style="font-size:16px">🪙</span> <span id="navCoinCount">100</span></div>
+      <div class="stat"><span style="font-size:16px">📋</span> <span id="navCopyCount">0</span></div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-logo">🇧🇩</div>
+    <h1>Emergency Service Directory</h1>
+    <p>Government Emergency Services at Your Fingertip — A Student Project Demo</p>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main class="container" role="main">
+    <!-- Cards -->
+    <section class="cards" id="cardsContainer" aria-label="Emergency cards">
+      <!-- cards injected by JS -->
+    </section>
+
+    <!-- History -->
+    <aside class="history" aria-label="Call history">
+      <div class="head">
+        <div style="display:flex;align-items:center;gap:8px">
+          <div style="font-weight:800">📞 Call History</div>
+          <div style="color:var(--muted);font-size:13px">Recent calls</div>
+        </div>
+        <button id="clearHistory" class="clear">Clear</button>
+      </div>
+      <ul id="historyList"></ul>
+    </aside>
+  </main>
+
+  <script src="script.js/em.js"></script>
 </body>
 </html>
